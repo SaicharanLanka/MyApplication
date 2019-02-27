@@ -32,7 +32,7 @@ public class MostViewedArticleAdapter extends RecyclerView.Adapter<MostViewedArt
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+
         public TextView tvTitle;
         public TextView tvDate;
         final public ImageView ivImageview;
@@ -56,7 +56,7 @@ public class MostViewedArticleAdapter extends RecyclerView.Adapter<MostViewedArt
 
     public FragmentManager fragmentManager;
     public MainActivity mainActivity;
-    // Provide a suitable constructor (depends on the kind of dataset)
+
     public MostViewedArticleAdapter(Response response, MainActivity mainActivity, FragmentManager fragmentManager) {
         this.response = response;
         this.fragmentManager = fragmentManager;
@@ -85,7 +85,7 @@ public class MostViewedArticleAdapter extends RecyclerView.Adapter<MostViewedArt
 
                 MostViewedArticleDetailFragment mostViewedArticleDetailFragment = new MostViewedArticleDetailFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString(Constant.BUNDLE_ARTICLE_URL,response.getResults().get(position).getUrl());
+                bundle.putString(Constant.ARTICLE_URL,response.getResults().get(position).getUrl());
                 mostViewedArticleDetailFragment.setArguments(bundle);
                 Helper.addAndInitFragmentWithBackStack(mostViewedArticleDetailFragment,R.id.fragment_content_container,fragmentManager);
 

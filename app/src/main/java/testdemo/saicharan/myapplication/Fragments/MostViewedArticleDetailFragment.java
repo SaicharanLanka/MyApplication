@@ -30,7 +30,7 @@ public class MostViewedArticleDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.layout_fragment_detail, null);
         progressDialog = new ProgressDialog(getActivity());
-        mUrl = getArguments().getString(Constant.BUNDLE_ARTICLE_URL);
+        mUrl = getArguments().getString(Constant.ARTICLE_URL);
         initView(view);
         return view;
     }

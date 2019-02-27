@@ -15,7 +15,6 @@ import testdemo.saicharan.myapplication.Fragments.MostViewecArticlesFragment;
 @Component(modules = {NetWorkModule.class, AppModule.class})
 public interface AppComponent {
 
-//    void inject(UploadImageFragment uploadImageFragment);
     void inject(MainActivity mainActivity);
     void inject(MostViewecArticlesFragment mostViewecArticlesFragment);
 }

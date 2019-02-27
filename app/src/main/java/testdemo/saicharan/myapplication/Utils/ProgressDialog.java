@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-
 import testdemo.saicharan.myapplication.R;
 
 
