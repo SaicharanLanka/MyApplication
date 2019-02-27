@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "testdemo.saicharan.myapplication"
+        compileSdkVersion 28
+        buildToolsVersion '28.0.3'
+        useLibrary 'org.apache.http.legacy'
+            minSdkVersion 19
+            targetSdkVersion 28
+            versionCode 1
+            versionName "1.0"
+            buildConfigField "String", "BASEURL", "\"http://api.nytimes.com/\""
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        }
+        lintOptions {
+            disable "ResourceType"
+            abortOnError false
+            checkReleaseBuilds false
+        }
+
+        testOptions {
+            unitTests.returnDefaultValues = true
+        }
+
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+        buildTypes {
+            debug {
+                minifyEnabled false
+                debuggable true
+            }
+            release {
+                minifyEnabled true
+                shrinkResources true
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                debuggable false
+            }
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation 'com.android.support:appcompat-v7:28.0.0'
+        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+        implementation 'com.google.code.gson:gson:2.6.2'
+        implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+        implementation 'com.android.support:recyclerview-v7:28.0.0'
+        implementation 'com.android.support:cardview-v7:28.0.0'
+        implementation 'com.android.support:design:28.0.0'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.1'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+        //
+        implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+        implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+        implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+        implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+        implementation 'com.google.code.gson:gson:2.6.2'
+        implementation 'com.squareup.retrofit2:converter-gson:2.0.1'
+        implementation 'io.reactivex:rxandroid:1.2.1'
+        implementation 'io.reactivex:rxjava:1.1.6'
+        compileOnly 'javax.annotation:jsr250-api:1.0'
+        //
+        implementation 'com.github.bumptech.glide:glide:3.8.0'
+
+        //Dagger2
+        implementation 'com.google.dagger:dagger:2.2'
+        annotationProcessor 'com.google.dagger:dagger-compiler:2.2'
+        implementation 'javax.annotation:jsr250-api:1.0'
+
+        testImplementation 'org.mockito:mockito-core:1.10.19'
+        testImplementation 'org.powermock:powermock-core:1.6.4'
+        testImplementation 'org.powermock:powermock-api-mockito:1.6.4'
+        testImplementation 'org.powermock:powermock-module-junit4:1.6.4'
+        androidTestImplementation 'junit:junit:4.12'
+    }
